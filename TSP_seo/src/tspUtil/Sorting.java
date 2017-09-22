@@ -7,7 +7,6 @@ public class Sorting {
 		int [] retArr = new int[arr.length];
 		boolean [] visited = new boolean[arr.length];
 		int [] sortedArr = Arrays.copyOf(arr, arr.length);
-		
 		Arrays.sort(sortedArr);
 		
 		for(int i = 0; i < retArr.length; i++){

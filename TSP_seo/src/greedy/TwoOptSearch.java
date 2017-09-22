@@ -28,7 +28,7 @@ public class TwoOptSearch extends TSPAlgorithm{
 		int bestScore = PathCheck.getPathCost(path);
 		
 		int [] copyPath = Arrays.copyOf(path, path.length);
-		int [] maxPath = Arrays.copyOf(path, path.length);
+//		int [] maxPath = Arrays.copyOf(path, path.length);
 		
 		int trial = 0;
 		
@@ -46,13 +46,13 @@ public class TwoOptSearch extends TSPAlgorithm{
 			int currentPath = PathCheck.getPathCost(trialPath);
 			
 			if(bestScore > currentPath){
-				maxPath = Arrays.copyOf(trialPath, trialPath.length);
+//				maxPath = Arrays.copyOf(trialPath, trialPath.length);
 				copyPath = Arrays.copyOf(trialPath, trialPath.length);
 				bestScore = currentPath;
 			}
 			trial++;
 		}
-		return maxPath;
+		return copyPath;
 	}
 
 	@Override

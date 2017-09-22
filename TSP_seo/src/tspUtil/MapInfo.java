@@ -68,7 +68,7 @@ public class MapInfo {
 				System.err.println("File read error");
 				System.exit(1);
 			}
-		}
+		}//File 읽기(단, 홈페이지의 형식과는 조금 다르다)
 		try {
 			reader.close();
 		} catch (IOException e) {
@@ -79,7 +79,7 @@ public class MapInfo {
 			for(int j = i + 1; j < numOfCity; j++){
 				this.distanceMap[i][j] = this.distanceMap[j][i];
 			}
-		}
+		}//거리 Symmetric
 	}
 	// 파일에서 도시의 숫자를 초기화
 	// 도시 개수 = 파일의 줄 수
@@ -89,6 +89,7 @@ public class MapInfo {
 		LineNumberReader reader = null;
 
 		try {
+			//LineNumberReader 줄수 읽기
 			reader = new LineNumberReader(new FileReader(filename));
 		} catch (FileNotFoundException e) {
 			System.err.println("File not found");

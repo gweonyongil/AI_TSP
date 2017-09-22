@@ -62,10 +62,12 @@ public class SASearch extends TSPAlgorithm{
 			
 			int trialScore = PathCheck.getPathCost(trialPath);
 			if (Math.random() < this.getAcceptProbability(bestScore, trialScore)) {
+				if(trialScore > bestScore){
+					System.out.println(bestScore);
+				}
 				copyPath = Arrays.copyOf(trialPath, trialPath.length);
 				bestScore = trialScore;
 			} 
-			
 			this.temperature *= this.deltaTemperature;
 		}
 		return copyPath;
