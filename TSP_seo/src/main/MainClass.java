@@ -56,7 +56,7 @@ public class MainClass {
 			int intVal2;
 			double plusVal2;
 			double val2;
-			int test_case = 5;
+			int test_case = 100;
 			double[] temperatureTrial = { 10, 20, 30, 50, 100, 1000 };
 			double total_time = 0;
 
@@ -66,20 +66,26 @@ public class MainClass {
 				intVal2 = (int) (randomVal2 * 20);
 				plusVal2 = (double) intVal2 / 100;
 				val2 = 0.8 + plusVal2;
-//				System.out.println(Double.toString(val2));
-				
+				// System.out.println(Double.toString(val2));
+
 				start = System.currentTimeMillis();
 				//////////// Starting Set///////////////
-//				System.out.println(Integer.toString(numOfCity));
+				// System.out.println(Integer.toString(numOfCity));
 				SASearch saSearch = new SASearch(temperatureTrial[2], 0.8, 100000, 1);
-				int[] path3 = saSearch.calculatePath(0);
-				System.out.println("SA search: " + PathCheck.getPathCost(path3));
+//				int[] path3 = saSearch.calculatePath(0);
+//				int[] path3_2= saSearch.calculatePath(0);
+//				System.out.println("SA search: " + PathCheck.getPathCost(path3));
+//				System.out.println("SA search: " + PathCheck.getPathCost(path3_2));
+				int[] twice_path = saSearch.calculatePath(0);
+//				int[] twice_path = saSearch.twiceAndSelect(0, path3, path3_2);
+				twice_path = saSearch.calculatePath(twice_path);
+				System.out.println("SA search: " + PathCheck.getPathCost(twice_path));
 				end = System.currentTimeMillis();
 				System.out.println("실행 시간 : " + (end - start) / 1000.0);
-				System.out.println("Experiment" + Integer.toString(i + 1) + " End");
+//				System.out.println("Experiment" + Integer.toString(i + 1) + " End");
 				total_time += (end - start);
 			}
-			System.out.println("평균 시간 : " + Double.toString(total_time / test_case / 1000.0));
+//			System.out.println("평균 시간 : " + Double.toString(total_time / test_case / 1000.0));
 			break;
 		case 4:
 			start = System.currentTimeMillis();
@@ -113,8 +119,8 @@ public class MainClass {
 			break;
 		}
 		// 끝에 아래와 같이 삽입
-//		end = System.currentTimeMillis();
-//		System.out.println("실행 시간 : " + (end - start) / 1000.0);
-//		System.out.println("Experiment End");
+		// end = System.currentTimeMillis();
+		// System.out.println("실행 시간 : " + (end - start) / 1000.0);
+		// System.out.println("Experiment End");
 	}
 }
